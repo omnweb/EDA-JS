@@ -1,0 +1,19 @@
+{
+  "name": "eda-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01-HelloWord.js",
+  "scripts": {
+    "start": "babel-node ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/node": "^7.14.7",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/preset-env": "^7.14.8",
+    "express": "^4.17.1"
+  }
+}
