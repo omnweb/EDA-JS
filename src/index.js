@@ -10,5 +10,7 @@ server.startup();
 // require('./Array/RemovendoElementos.js') // Ao início e ao final do Array
 // require('./Array/AdicionandoERemovendo') // Adiciona e remove posição específica
 // require('./Array/ArrayBiDimensional') // Simulando matriz em javaScript
-require('./Array/ArrayMultidimensional') // Simulando matriz em javaScript
+// require('./Array/ArrayMultidimensional') // Simulando matriz multidimencional 3x3x3x
+// require('./Array/metodos/concat') // Método que concatena arrays
+require('./Array/metodos/funcaoIteracao') // Função de Iteração
 
