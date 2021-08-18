@@ -21,6 +21,16 @@ server.startup();
 // require('./Array/metodosES6/ArrayOf') //Método ArrayOf
 // require('./Array/metodosES6/Fill') //Método Fill
 // require('./Array/metodosES6/CopyWithin') //Método CopyWithin
-require('./Array/metodosES6/Ordenacao/OrdenandoElementos') //Método CopyWithin
-
+// require('./Array/metodosES6/Ordenacao/OrdenandoElementos') //Ordenação de elementos
+// require('./Array/metodosES6/Ordenacao/OrdenacaoPersonalizada') //Ordenação Personalizada
+// require('./Array/metodosES6/Ordenacao/OrdenandoString') //Ordenação Personalizada
+// require('./Array/metodosES6/Pesquisa/indexOf') //Pesquisa IndexOf
+// require('./Array/metodosES6/Pesquisa/lastIndexOf') //Pesquisa lastIndexOf
+// require('./Array/metodosES6/Pesquisa/find') //Pesquisa find
+// require('./Array/metodosES6/Pesquisa/findIndex') //Pesquisa findIndex
+// require('./Array/metodosES6/Pesquisa/includes') //Pesquisa includes
+// require('./Array/metodosES6/toString') //Metodo toString
+// require('./Array/metodosES6/join') //Metodo join
+// require('./Array/ClassTypedArray') //Classe TypedArray
+require('./Array/ArrayTypeScript') //ArrayTypeScript
 
