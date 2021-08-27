@@ -32,5 +32,13 @@ server.startup();
 // require('./Array/metodosES6/toString') //Metodo toString
 // require('./Array/metodosES6/join') //Metodo join
 // require('./Array/ClassTypedArray') //Classe TypedArray
-require('./Array/ArrayTypeScript') //ArrayTypeScript
+// require('./Array/ArrayTypeScript') //ArrayTypeScript
+
+// PILHAS
+// require('./Pilha/stack-array') // Classe PILHA com Array
+// require('./Pilha/stack') // Classe PILHA com Objeto
+require('./Pilha/SymbolStack') // Classe PILHA PROTEGIDA com Objeto
+
+
+
 
