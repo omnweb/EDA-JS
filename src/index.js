@@ -37,7 +37,12 @@ server.startup();
 // PILHAS
 // require('./Pilha/stack-array') // Classe PILHA com Array
 // require('./Pilha/stack') // Classe PILHA com Objeto
-require('./Pilha/SymbolStack') // Classe PILHA PROTEGIDA com Objeto
+// require('./Pilha/SymbolStack') // Classe PILHA PROTEGIDA com Objeto
+// require('./Pilha/stackWeakMap') // Classe PILHA PROTEGIDA com WeakMap
+
+// Exrcícios
+// require('./Exercicios/Pilha/decimalParaBinario') //Convertendo Decimal em Binário
+require('./Exercicios/Pilha/conversorDeBase') //Convertendo Decimal para bases de 2 a 36
 
 
 
