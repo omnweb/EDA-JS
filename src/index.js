@@ -34,7 +34,7 @@ server.startup();
 // require('./Array/ClassTypedArray') //Classe TypedArray
 // require('./Array/ArrayTypeScript') //ArrayTypeScript
 
-// PILHAS
+// PILHAS -STACK
 // require('./Pilha/stack-array') // Classe PILHA com Array
 // require('./Pilha/stack') // Classe PILHA com Objeto
 // require('./Pilha/SymbolStack') // Classe PILHA PROTEGIDA com Objeto
@@ -42,7 +42,10 @@ server.startup();
 
 // Exrcícios
 // require('./Exercicios/Pilha/decimalParaBinario') //Convertendo Decimal em Binário
-require('./Exercicios/Pilha/conversorDeBase') //Convertendo Decimal para bases de 2 a 36
+// require('./Exercicios/Pilha/conversorDeBase') //Convertendo Decimal para bases de 2 a 36
+
+// FILAS - QUEUE
+require('./Filas&Deques/Fila/ClassQueue') // Classe FIla com Obj
 
 
 
