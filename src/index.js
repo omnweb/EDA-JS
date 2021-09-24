@@ -45,7 +45,8 @@ server.startup();
 // require('./Exercicios/Pilha/conversorDeBase') //Convertendo Decimal para bases de 2 a 36
 
 // FILAS - QUEUE
-require('./Filas&Deques/Fila/ClassQueue') // Classe FIla com Obj
+// require('./Filas&Deques/Fila/ClassQueue') // Classe Fila com Obj
+require('./Filas&Deques/Deque/classDeque') // Classe Deque com Obj
 
 
 

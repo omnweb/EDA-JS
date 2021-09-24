@@ -4,7 +4,7 @@
   "description": "",
   "main": "01-HelloWord.js",
   "scripts": {
-    "start": "babel-node ./src/index.js"
+    "start": "nodemon --exec babel-node ./src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +16,8 @@
     "@babel/preset-env": "^7.14.8",
     "express": "^4.17.1",
     "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
   }
 }
