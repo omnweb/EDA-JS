@@ -46,7 +46,12 @@ server.startup();
 
 // FILAS - QUEUE
 // require('./Filas&Deques/Fila/ClassQueue') // Classe Fila com Obj
-require('./Filas&Deques/Deque/classDeque') // Classe Deque com Obj
+// require('./Filas&Deques/Deque/classDeque') // Classe Deque com Obj
+
+// EXERCÍCIOS FILA/DEQUE
+
+// require('./Exercicios/Filas&Deques/hotPotato') //Exercício Batata Quente
+require('./Exercicios/Filas&Deques/palindromo') //Exercício Palíndromo
 
 
 

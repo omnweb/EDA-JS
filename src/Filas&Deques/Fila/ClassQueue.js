@@ -81,29 +81,29 @@ export class Queue {
     // count = 2;
     // lowestCount = 0;
 
-// Executando a Classe
-const queue = new Queue();
-// Verificando se está vazio
-console.log(queue.isEmpty()); // Exibe true
+// // Executando a Classe
+// const queue = new Queue();
+// // Verificando se está vazio
+// console.log(queue.isEmpty()); // Exibe true
 
-// Adicionando elementos
-queue.enqueue('Jhon');
-queue.enqueue('Jack');
-// Verificando se está vazio
-console.log(queue.isEmpty()); // Exibe false
-// Mostra quem está no topo
-console.log(queue.peek()); // Exibe Jhon
-// Exibe a fila em string
-console.log(queue.toString()); // Jhon, Jack
-queue.enqueue('Camila');
-// Verifica o tamanho da fila
-console.log(queue.size()); // Exibe 3
+// // Adicionando elementos
+// queue.enqueue('Jhon');
+// queue.enqueue('Jack');
+// // Verificando se está vazio
+// console.log(queue.isEmpty()); // Exibe false
+// // Mostra quem está no topo
+// console.log(queue.peek()); // Exibe Jhon
+// // Exibe a fila em string
+// console.log(queue.toString()); // Jhon, Jack
+// queue.enqueue('Camila');
+// // Verifica o tamanho da fila
+// console.log(queue.size()); // Exibe 3
 
-// Remove da fila
-queue.dequeue() // Remove Jhon
-queue.dequeue() // Remove Jack
+// // Remove da fila
+// queue.dequeue() // Remove Jhon
+// queue.dequeue() // Remove Jack
 
-console.log(queue.toString()); // Camila
+// console.log(queue.toString()); // Camila
 
 
 

@@ -1,7 +1,7 @@
 // Deques implementantam tanto os princícios FIFO qto LIFO, podemos dizer que combina as estruturas de
 // pilhas e filas
 
-class Deque {
+export class Deque {
   constructor() {
     this.count = 0;
     this.lowestCount = 0;
@@ -93,18 +93,18 @@ class Deque {
   }
 }
 
-const deque = new Deque();
-console.log(deque.isEmpty()); // true
-deque.addBack('Jhon');
-deque.addBack('Jack');
-console.log(deque.toString()); //Jhon,Jack
-console.log(deque.isEmpty()); // false
-deque.addBack('Camila');
-console.log(deque.size()); // 3
-deque.removeFront(); //Remove Jhon
-deque.removeBack(); // Remove Camila
-console.log(deque.toString()); //Jack
-deque.addFront('John');
-console.log(deque.toString());
+// const deque = new Deque();
+// console.log(deque.isEmpty()); // true
+// deque.addBack('Jhon');
+// deque.addBack('Jack');
+// console.log(deque.toString()); //Jhon,Jack
+// console.log(deque.isEmpty()); // false
+// deque.addBack('Camila');
+// console.log(deque.size()); // 3
+// deque.removeFront(); //Remove Jhon
+// deque.removeBack(); // Remove Camila
+// console.log(deque.toString()); //Jack
+// deque.addFront('John');
+// console.log(deque.toString());
 
 
