@@ -35,22 +35,85 @@ export default  class LinkedList {
 
     // ADICIONA EM UMA POSIÇÃO EXPECÍFICA
     insert(element, position) {
-
+        if (index >= 0 && index <= this.count) { 
+            const node = new Node(element); //Elemento que queremos adc na fila
+            if (index == 0) { // Adiciona na 1ª posição
+                const current =  this.head; // Primeiro el da fila
+                node.next = current; // Adiciona o elemento na primeira posição
+                this.next = node;
+            } else {
+                const previous = this.getElementAt(index - 1); // Percorre um laço ate que a posição anterior a q desejamos adc um elemento seja encontrada
+                const current = previous.next; // current referencia uma posição posterior à que será inserido o novo nó
+                node.next = current; //liga o novo nó a current
+                previous.next = node; // Agora previous.next aponta para o nó ao invés de apontar para current
+            }
+            this.count++;
+            return true;
+        }
+        return false; //Devolve false se não existir nada na lista
     }
 
     // DEVOLVE UM ELEMENTO DE POSIÇÃO EXPECÍFICA, CASO ESTE NÃO EXISTE RETORNA UNDEFINED
     getElementAt(index) {
-
+        if (index >=0 && index <= this.count) { //Verifica se index é válido
+            let current = this.head; // Inicianos o nó com o primeiro elemento
+            for (let i = 0; i < index && current != null; i++) { // Percorre até alcançar o índex desejado
+                current = current.next;   //Ao sair do laço o current referenciará o elemento na posição index             
+            }
+        return current;
+        }
+        return undefined; // Devolve undefined caso inválido
     }
 
-    // REMOVE UM ELEMENTO
-    remove(element) {
+    // removeAt(index) {
+    //     const index = this.indexOf(element);
+    // return this.removeAt(index);
+    //     if ( index >= 0 || index < this.count) { // Verifica se o index é válido, varia de 0 ao tamanho da lista
+    //         let current =  this.head; // Current referencia o elemento atual, o mesmo q será removido
+    //         Remove o primeiro item
+    //         if (this.head === 0) {
+    //             this.head = current.next;
+    //         } else {
+    //             let previous;// Referencia um elemento anterior ao atual (current)
+    //             for (let i = 0; i < index.length; i++) {
+    //                 const element = index[i];
+    //                 previous = current; //Anterior recebe o atual
+    //                 current = current.next; // Atual recebe o próximo
+    //                 // Isso faz com que current seja perdido e o coletor de lixo o retire da memória
+    //             }
+    //             // faz a ligação de previous com o next de current: pula esse elemento para removê-lo  
+    //             previous.next = current.next; // Faz referência ao último nó da lista
+    //         }
+    //     }
+    //     return undefined // index inválido retorna undefined
+    // }
 
-    }
+     ///////////////////////////////////
+    // ↓ Refatoração do código acima
+    ////////////////////////////////////
 
     // REMOVE UM ELEMENTO EXPECÍFICO
-    removeAt(position) {
-
+    removeAt(index) {
+        if ( index >= 0 || index < this.count) { // Verifica se o index é válido, varia de 0 ao tamanho da lista
+            let current =  this.head; // Current referencia o elemento atual, o mesmo q será removido
+            // Remove o primeiro item
+            if (index === 0) {
+                this.head = current.next;
+            } else {
+                const previous = this.getElementAt(index - 1);
+                current = previous.next;
+                previous.next = current.next;
+            }
+            this.count--;
+            return current.element;
+        }
+        return undefined // index inválido retorna undefined
+    }
+    
+    // REMOVE UM ELEMENTO
+    remove(element) {
+        const index = this.indexOf(element);
+        return this.removeAt(index);
     }
 
     // DEVOLVE O ÍNDICE DO ELEMENTO DA LISTA, CASO ESTE NÃO EXISTA, RETORNA -1
