@@ -9,8 +9,11 @@ export default  class LinkedList {
     constructor () {
         this.count = 0;
         this.head = undefined; 
-        this.equalsFn = equalsFn;
+        this.equalsFn = function defaultEquals(a, b) {
+            return a === b;
+        }
     }
+
 
     // ADICIONA AO FINAL DA LISTA
     // Existem 2 senarios, o que a lista está vazia e adcionamos o primeiro elemento
@@ -117,8 +120,15 @@ export default  class LinkedList {
     }
 
     // DEVOLVE O ÍNDICE DO ELEMENTO DA LISTA, CASO ESTE NÃO EXISTA, RETORNA -1
-    indexOf() {
-
+    indexOf(element) {
+        let current =  this.head; //current auxiliará a percorrer a lista 
+        for (let i = 0; i < this.count && current! null, i++) {
+           if (this.equalsFnl(element, current.element)) { // Verifica se o elemento que procuramos é igual ao nó current
+               return i; // Devolve a posição se o el for == current
+           }     
+           current = current.next; // Se não for == current, passa para o próximo nó
+        }
+        return -1; // caso o  valor não seja encontrado devolvemos -1
     }
 
     // DEVOLVE TRUE SE A LISTA ESTIVER VAZIA E FALSE DO CONTRÁRIO
