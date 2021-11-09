@@ -101,9 +101,9 @@ export default  class LinkedList {
             let current =  this.head; // Current referencia o elemento atual, o mesmo q será removido
             // Remove o primeiro item
             if (index === 0) {
-                this.head = current.next;
+                this.head = current.next; // Para remover o primeiro elemento, basta head apontar para o segungo elemento
             } else {
-                const previous = this.getElementAt(index - 1);
+                const previous = this.getElementAt(index - 1); // Referencia um número anterior a current
                 current = previous.next;
                 previous.next = current.next;
             }
@@ -132,17 +132,36 @@ export default  class LinkedList {
     }
 
     // DEVOLVE TRUE SE A LISTA ESTIVER VAZIA E FALSE DO CONTRÁRIO
-    isEmpty() {
-
+     isEmpty() {
+        return this.size() === 0;
+    }
+    //DEVOLVE A VARIÁVEL PRIVADA HEAD
+    getHead() {
+        return this.head;
     }
 
     // DEVOLVE A QUANTIDADE DE ELEMENTOS DA LISTA
     size() {
+        return this.count;
+    }
 
+    clear() {
+        this.head = undefined;
+        this.count = 0;
     }
 
     // DEVOLVE UMA REPRESENTAÇÃO EM STRING DA LISTA LIGADA
     toString () {
+        if (this.isEmpty()) { // Se a lista estiver vazia, head será null ou undefined
+            return '';
+        }
+        let objString = `${this.head.element}`; // Inicia a variável que será devolvida com o primeiro elemento
+        let current = this.head.next
 
+        for (let i = 0; i < this.size() && current != null; i++) { //Iterando por todos os elementos da lista 
+            objString = `${objString}`, `${current.element}`; // E adicionamos os valores a nossa string
+            current = current.next;
+        }
+        return objString; //Retorna o conteúdo da lista
     }
 }
