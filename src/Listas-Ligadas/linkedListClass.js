@@ -127,7 +127,7 @@ export default class LinkedList {
   indexOf(element) {
     let current = this.head; //current auxiliará a percorrer a lista
     for (let i = 0; i < this.count && current != null; i++) {
-      if (this.equalsFnl(element, current.element)) {
+      if (this.equalsFn(element, current.element)) {
         // Verifica se o elemento que procuramos é igual ao nó current
         return i; // Devolve a posição se o el for == current
       }
@@ -166,7 +166,7 @@ export default class LinkedList {
 
     for (let i = 0; i < this.size() && current != null; i++) {
       //Iterando por todos os elementos da lista
-      (objString = `${objString}`), `${current.element}`; // E adicionamos os valores a nossa string
+      objString = (`${objString}, ${current.element}`); // E adicionamos os valores a nossa string
       current = current.next;
     }
     return objString; //Retorna o conteúdo da lista
