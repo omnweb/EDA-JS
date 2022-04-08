@@ -51,7 +51,9 @@ server.startup();
 // EXERCÍCIOS FILA/DEQUE
 
 // require('./Exercicios/Filas&Deques/hotPotato') //Exercício Batata Quente
-require('./Exercicios/Filas&Deques/palindromo') //Exercício Palíndromo
+// require('./Exercicios/Filas&Deques/palindromo') //Exercício Palíndromo
+
+require('./Listas-Ligadas/doublyLinkedList') // Lista Duplamente Ligada
 
 
 

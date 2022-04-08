@@ -6,7 +6,7 @@ export class Server {
   startup() {
     this.setupRoutes();
 
-    this.app.listen(3001, () => console.log("Listening..."));
+    this.app.listen(3000, () => console.log("Listening..."));
   }
 
   setupRoutes() {
