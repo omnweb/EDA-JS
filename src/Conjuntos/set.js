@@ -84,20 +84,113 @@ class Set {
     }
     return values; // Retornamos o array
   }
+
+  // Operações de conjuntos
+
+  // *UNION
+  // Retorna um novo conjunto com os elementos do conjunto atual e o conjunto passado como parâmetro
+
+  union(otherSet) {
+    const unionSet = new Set(); // Criamos um novo conjunto para representar o resultado da união
+    this.values().forEach((value) => unionSet.add(value)); // Adicionamos todos os elementos do conjunto atual ao novo conjunto
+    otherSet.values().forEach((value) => unionSet.add(value)); // Adicionamos todos os elementos do conjunto passado como parâmetro ao novo conjunto
+    return unionSet; // Retornamos o conjunto
+  }
+
+  // * Intersecção
+  // Retorna um novo conjunto com os elementos que estão nos dois conjuntos
+
+  intersection(otherSet) {
+    const intersectionSet = new Set(); // Criamos um novo conjunto para receber os elementos comuns aos dois conjuntos
+    const values = this.values(); // Obtemos todos os elementos do conjunto atual
+    const otherValues = otherSet.values(); // Obtemos todos os elementos do conjunto passado como parâmetro
+
+    let biggerSet = values; // Criamos uma variável para receber o maior conjunto
+    let smallerSet = otherValues; // Criamos uma variável para receber o menor conjunto
+
+    if (otherValues.length - values.length) {
+      biggerSet = otherValues; // Se o tamanho do conjunto passado como parâmetro for maior, o conjunto passado como parâmetro é o maior
+      smallerSet = values; // Se o tamanho do conjunto atual for maior, o conjunto atual é o menor
+    }
+
+    smallerSet.forEach((value) => {
+      if (biggerSet.includes(value)) {
+        intersectionSet.add(value); // Adicionamos o elemento ao conjunto de interseção
+      }
+    });
+    return intersectionSet; // Retornamos o conjunto
+    // Dessa forma iteramos sobre o menor conjunto e verificamos se o elemento está presente no conjunto maior
+  }
+
+  // * Diferença
+  // Retorna um novo conjunto com os elementos que estão no conjunto atual e não no conjunto passado como parâmetro
+  difference(otherSet) {
+    const differenceSet = new Set(); // Criamos um novo conjunto para receber os elementos que estão no conjunto atual e não no conjunto passado como parâmetro
+    this.values().forEach((value) => {
+      if (!otherSet.has(value)) {
+        differenceSet.add(value); // Adicionamos o elemento ao conjunto de diferença
+      }
+    });
+    return differenceSet; // Retornamos o conjunto
+  }
+
+  // * Subtração / Subconjunto
+  // Confirma se um dado conjunto é subconjunto de outro
+  isSubSetOf(otherSet) {
+    if (this.size() > otherSet.size()) {
+      return false; // Se o tamanho do conjunto atual for maior que o tamanho do conjunto passado como parâmetro, não é subconjunto
+    }
+    let isSubSet = true; // Criamos uma variável para informar se o conjunto atual é subconjunto do conjunto passado como parâmetro
+    return this.values().every((value) => { // Retorna true se todos os elementos do conjunto atual estiverem no conjunto passado como parâmetro
+      if (!otherSet.has(value)) {
+        isSubSet = false; // Se um elemento não estiver no conjunto passado como parâmetro, o conjunto atual não é subconjunto
+        return false;
+      }
+      return true;
+    });
+    return isSubSet; // Retornamos o resultado da verificação
+  }
 }
 
 export default Set;
 
-const set = new Set();
+const setA = new Set();
 
-set.add(1);
-set.add(2);
+setA.add(1);
+setA.add(2);
+setA.add(3);
 
-console.log(set.size()); // 2
-console.log(set.sizeLegacy()); // 2
+const setB = new Set();
+setB.add(1);
+setB.add(2);
 
-console.log(set.values()); // [ 1, 2 ]
-console.log(set.valuesLegacy()); // [ 1, 2 ]
+const setC = new Set();
+setC.add(2);
+setC.add(3);
+setC.add(4);
+
+const unionAB = setA.union(setB); //[ 1, 2, 3, 4, 5 ]
+const intersectionAB = setA.intersection(setB); //[ 2, 3 ]
+const differenceAB = setA.difference(setB); //[ 1 ]
+const differenceBA = setB.difference(setA); //[ 4 ]
+
+
+console.log(unionAB.values());
+console.log(intersectionAB.values());
+console.log(differenceAB.values());
+console.log(differenceBA.values());
+console.log(setA.isSubSetOf(setB));
+console.log(setB.isSubSetOf(setA));
+console.log(setB.isSubSetOf(setC));
+
+// set.add(1);
+// set.add(2);
+
+// console.log(set.size()); // 2
+// console.log(set.sizeLegacy()); // 2
+
+// console.log(set.values()); // [ 1, 2 ]
+// console.log(set.valuesLegacy()); // [ 1, 2 ]
 
 // set.clear();
 // set.delete(1);
