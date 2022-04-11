@@ -54,7 +54,9 @@ server.startup();
 // require('./Exercicios/Filas&Deques/palindromo') //Exercício Palíndromo
 
 // require('./Listas-Ligadas/doublyLinkedList') // Lista Duplamente Ligada
-require('./Listas-Ligadas/circularLinkedList') // Lista Circular
+// require('./Listas-Ligadas/circularLinkedList') // Lista Circular
+// require('./Listas-Ligadas/sorterLinkedList') // Lista Ordenada
+require('./Listas-Ligadas/stackLinkedList') // Lista Ordenada
 
 
 

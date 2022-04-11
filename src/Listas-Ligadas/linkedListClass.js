@@ -37,7 +37,7 @@ export default class LinkedList {
   }
 
   // ADICIONA EM UMA POSIÇÃO EXPECÍFICA
-  insert(element, position) {
+  insert(element, index) {
     if (index >= 0 && index <= this.count) {
       const node = new Node(element); //Elemento que queremos adc na fila
       if (index == 0) {

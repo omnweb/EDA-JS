@@ -1,27 +1,27 @@
 import LinkedList from "./linkedListClass";
+import { Compare, defaultCompare, defaultEquals } from '../util';
 
-const Compare = {
-    LESS_THAN: -1,
-    BIGGER_THAN: 1,
-}
-
-function defaultCompare(a, b) {
-    if (a === b) return 0
-
-    return a < b ? Compare.LESS_THAN : Compare.BIGGER_THAN;
-
-}
 // Sort Linked List herda os metodos da LinkedList, mas com função especial para comparar elementos
 class SorterLinkedList extends LinkedList{
-    constructor(equalsFn = defaultCompare, compareFn = defaultCompare) {
+    constructor(equalsFn = defaultEquals, compareFn = defaultCompare) {
         super(equalsFn);
+        this.equalsFn = equalsFn;
         this.compareFn = compareFn;
-    }
+      }
+
+    push(element) {
+        if (this.isEmpty()) {
+          super.push(element);
+        } else {
+          const index = this.getIndexNextSortedElement(element);
+          super.insert(element, index);
+        }
+      }
 
     // Sobrescrevendo o metodo insert de LinkedList
     insert(element, index) { // Atribuindo um valor defalt ao index para evitar a inserção em quualquer índice
         if (this.isEmpty()) { 
-            return super.insert(element, 0); // Se a lista estiver vazia passa o elemento e o 0 como index
+            return super.insert(element, index === 0 ? index : 0); // Se a lista estiver vazia passa o elemento e o 0 como index
         }
 
         const pos = this.getIndexNextSortElement(element); // Obtendo a posição do elemento a ser inserido
@@ -46,3 +46,11 @@ class SorterLinkedList extends LinkedList{
 }
 
 export default SorterLinkedList;
+
+const orderList = new SorterLinkedList();
+
+orderList.insert(1);
+console.log(orderList.getHead());
+
+
+// console.log(orderList.toString());
