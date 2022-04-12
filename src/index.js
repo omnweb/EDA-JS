@@ -58,7 +58,8 @@ server.startup();
 // require('./Listas-Ligadas/sorterLinkedList') // Lista Ordenada
 // require('./Listas-Ligadas/stackLinkedList') // Lista Ordenada
 
-require('./Conjuntos/set') // Classe Set
+// require('./Conjuntos/set') // Classe Set
+require('./Conjuntos/setNative') // Classe Set Nativa
 
 
 
