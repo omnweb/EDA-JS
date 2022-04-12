@@ -13,3 +13,11 @@ export function defaultCompare(a, b) {
     return a < b ? Compare.LESS_THAN : Compare.BIGGER_THAN;
 
 }
+
+// Converte um ítem para string
+export function defaultToString(item) {
+    if (item === null) return 'NULL'
+    if (item === undefined) return 'UNDEFINED'
+    if (typeof item === 'string' || item instanceof String) return `${item}`
+    return item.toString()
+}

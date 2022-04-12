@@ -59,7 +59,9 @@ server.startup();
 // require('./Listas-Ligadas/stackLinkedList') // Lista Ordenada
 
 // require('./Conjuntos/set') // Classe Set
-require('./Conjuntos/setNative') // Classe Set Nativa
+// require('./Conjuntos/setNative') // Classe Set Nativa
+
+require('./Dicionarios&hashes/dictinonary') // Classe Set Nativa
 
 
 
